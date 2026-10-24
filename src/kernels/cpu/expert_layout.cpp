@@ -39,6 +39,7 @@ int cpu_isa_cap() {
     return cap;
 }
 
+// bench/micro/q2g_rows_bench.cpp keeps a copy of this test for its own skip; keep the two in agreement.
 bool cpu_avx512_ok() {
     static const bool ok = [] {
         if (const char* f = std::getenv("STRATA_FORCE_AVX2"); f != nullptr && f[0] == '1') return false;
